@@ -1,4 +1,3 @@
-import { json } from "react-router";
 import { authenticate } from "../shopify.server";
 
 /**
@@ -14,7 +13,7 @@ export async function action({ request }) {
     const { email } = body;
 
     if (!email || !email.includes('@')) {
-      return json(
+      return Response.json(
         { error: 'Invalid email address' },
         { status: 400 }
       );
@@ -54,7 +53,7 @@ export async function action({ request }) {
     const customers = customerData.data?.customers?.edges || [];
 
     if (customers.length === 0) {
-      return json({
+      return Response.json({
         discountCodes: [],
         message: 'Customer not found'
       });
@@ -155,7 +154,7 @@ export async function action({ request }) {
       }
     }
 
-    return json({
+    return Response.json({
       discountCodes,
       customerEmail: customer.email,
       message: `Found ${discountCodes.length} discount code(s)`
@@ -163,7 +162,7 @@ export async function action({ request }) {
 
   } catch (error) {
     console.error('Error in POS discount verification:', error);
-    return json(
+    return Response.json(
       { error: 'Internal server error', details: error.message },
       { status: 500 }
     );
@@ -183,5 +182,5 @@ export async function loader({ request }) {
     });
   }
 
-  return json({ error: 'Method not allowed' }, { status: 405 });
+  return Response.json({ error: 'Method not allowed' }, { status: 405 });
 }
