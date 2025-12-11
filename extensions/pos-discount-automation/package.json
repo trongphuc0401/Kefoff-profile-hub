@@ -1,0 +1,9 @@
+{
+    "name": "pos-discount-automation",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+        "preact": "^10.24.3"
+    }
+}

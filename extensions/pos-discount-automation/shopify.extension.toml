@@ -1,0 +1,20 @@
+# Learn more about configuring your extension at
+# https://shopify.dev/docs/api/pos-ui-extensions
+
+api_version = "2025-01"
+
+[[extensions]]
+name = "pos-discount-automation"
+handle = "pos-discount-automation"
+
+uid = "ab598658-92d4-5ea3-9f26-6bea25c92b6890396da5"
+
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "pos.home.tile.render"
+module = "./src/Tile.jsx"
+
+[[extensions.targeting]]
+target = "pos.home.modal.render"
+module = "./src/Modal.jsx"

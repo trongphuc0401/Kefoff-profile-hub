@@ -1,3 +1,21 @@
 {
-  "earnPoints": "You've earned 1,000 points from this order. You've been upgraded to Platinum tier."
+  "heading_default": "Chương Trình Coffee Pass",
+  "empty_state_default": "Không có dữ liệu cho metafield này.",
+  "loading": "Đang tải dữ liệu...",
+  "error_loading": "Không thể tải metafield.",
+  "banner_info_heading": "Thông Tin Pass",
+  "banner_info_content": "Pass hết hạn trong một tháng và chỉ có thể sử dụng một lần mỗi ngày.",
+  "pass_details_heading": "Thông Tin Chi Tiết",
+  "label_pass_name": "Tên Pass:",
+  "label_pass_code": "Mã Pass:",
+  "label_user": "Người dùng:",
+  "label_usage": "Đã sử dụng:",
+  "label_start_date": "Ngày bắt đầu:",
+  "label_expiry_date": "Ngày hết hạn:",
+  "usage_count": " lần",
+  "banner_no_pass_heading": "Bạn chưa có Kefoff Pass!",
+  "banner_no_pass_content": "Mua Pass ngay để tận hưởng ưu đãi đặc biệt và tiết kiệm cho những ly cà phê yêu thích.",
+  "button_unlock": "Mua Ngay",
+  "history_heading": "Lịch Sử Sử Dụng",
+  "config_instruction": "Chọn namespace và key trong cấu hình block để hiển thị dữ liệu."
 }
