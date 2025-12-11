@@ -2,20 +2,26 @@ import { Outlet, useLoaderData, useRouteError } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { AppProvider } from "@shopify/shopify-app-react-router/react";
 import { authenticate } from "../shopify.server";
-import enTranslations from "@shopify/polaris/locales/en.json";
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
 
+  // Dynamically import translations to avoid issues in production
+  const enTranslationsModule = await import("@shopify/polaris/locales/en.json");
+  const enTranslations = enTranslationsModule.default;
+
   // eslint-disable-next-line no-undef
-  return { apiKey: process.env.SHOPIFY_API_KEY || "" };
+  return {
+    apiKey: process.env.SHOPIFY_API_KEY || "",
+    i18n: enTranslations
+  };
 };
 
 export default function App() {
-  const { apiKey } = useLoaderData();
+  const { apiKey, i18n } = useLoaderData();
 
   return (
-    <AppProvider embedded apiKey={apiKey} i18n={enTranslations}>
+    <AppProvider embedded apiKey={apiKey} i18n={i18n}>
       <s-app-nav>
         <s-link href="/app">Home</s-link>
         <s-link href="/app/customers">Customers</s-link>
