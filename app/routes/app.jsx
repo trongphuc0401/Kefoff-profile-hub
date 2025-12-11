@@ -6,14 +6,14 @@ import { authenticate } from "../shopify.server";
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
 
-  // Dynamically import translations to avoid issues in production
-  const enTranslationsModule = await import("@shopify/polaris/locales/en.json");
-  const enTranslations = enTranslationsModule.default;
+  // Dynamically import Vietnamese translations
+  const viTranslationsModule = await import("@shopify/polaris/locales/vi.json");
+  const viTranslations = viTranslationsModule.default;
 
   // eslint-disable-next-line no-undef
   return {
     apiKey: process.env.SHOPIFY_API_KEY || "",
-    i18n: enTranslations
+    i18n: viTranslations
   };
 };
 
