@@ -13,7 +13,7 @@ import {
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 import { useState } from "react";
-import { useLoaderData, Form, useActionData, useSubmit } from "@remix-run/react";
+import { useLoaderData, Form, useActionData, useSubmit } from "react-router";
 import { authenticate } from "../shopify.server";
 
 export const loader = async ({ request }) => {
