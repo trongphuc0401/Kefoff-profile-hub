@@ -2,7 +2,7 @@
 
 client_id = "ef2ee1771d1bdefd003ae6f850fb79e9"
 name = "Kefoff Profile Hub"
-application_url = "https://admitted-automobile-even-busy.trycloudflare.com"
+application_url = "https://kefoff-profile-1zja4vh98-trongphuc0401s-projects.vercel.app"
 embedded = true
 
 [build]
@@ -24,4 +24,7 @@ api_version = "2026-01"
 scopes = "write_products,customer_read_customers,read_customers,write_customers,read_discounts"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ 
+  "https://kefoff-profile-1zja4vh98-trongphuc0401s-projects.vercel.app/api/auth",
+  "https://kefoff-profile-1zja4vh98-trongphuc0401s-projects.vercel.app/api/auth/callback"
+]
