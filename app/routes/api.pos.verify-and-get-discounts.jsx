@@ -1,4 +1,4 @@
-import { json } from "@react-router/node";
+import { json } from "react-router";
 import { authenticate } from "../shopify.server";
 
 /**
