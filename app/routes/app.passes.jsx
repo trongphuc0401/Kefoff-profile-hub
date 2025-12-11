@@ -9,7 +9,7 @@ import {
     Layout,
 } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
-import { useLoaderData } from "@react-router/react";
+import { useLoaderData } from "react-router";
 
 export const loader = async ({ request }) => {
     const { admin } = await authenticate.admin(request);
